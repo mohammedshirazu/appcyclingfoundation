@@ -1,0 +1,1106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: seagreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.navbar {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 0 0 10px 10px;
+    font-size: 1.2rem;
+    z-index: 100;
+}
+
+.nav_logo_cont {
+    display: flex;
+    justify-content: center;
+    /* border: solid 2px red; */
+    align-items: center;
+    /* width: 30vw; */
+    height: 100%;
+    /* background-color: rgb(212, 150, 29); */
+    /* object-fit: cover; */
+    /* transform: scale(1.2); */
+
+}
+
+.nav_logo_img {
+    /* width: ;  */
+    height: 100px;
+}
+
+/* wrap = container of cont*/
+.nav_pages_wrap {
+    width: 50%;
+    height: 100%;
+}
+
+.nav_pages_cont {
+    /* width: 50%; */
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+}
+
+/* nav page = home, about, contact... sections */
+
+.nav_pages_cont {
+    margin-right: 4vw;
+    /* border: solid 3px red; */
+}
+
+.nav_page {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_page_link {
+    width: 100%;
+    height: 80%;
+}
+
+/* .nav_btn {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgb(21, 143, 68);
+    border: 2px solid transparent;
+    border-radius: 8px 4px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.nav_btn_contact {
+    width: 140%;
+    background-color: rgba(21, 143, 68, 1);
+    color: rgb(248, 248, 247);
+    
+} */
+
+/* ************* Updated Navbar Button Animation ************* */
+
+.nav_btn {
+    position: relative; /* Container for absolute pseudoelement */
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgb(21, 143, 68);
+    border: none; /* Removed fixed border to allow bottom line drawing */
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Bottom border pseudo-element setup */
+.nav_btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: rgb(13, 67, 35);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Expand bottom border from middle outwards on hover */
+.nav_btn:not(.nav_btn_contact):hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Keep solid styling for the primary CTA button */
+.nav_btn_contact {
+    width: 140%;
+    background-color: rgba(21, 143, 68, 1);
+    color: rgb(248, 248, 247);
+    border-radius: 8px 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav_btn_contact:hover {
+    background-color: rgb(13, 67, 35);
+}
+
+.nav_btn_contact::after {
+    display: none; /* Disable middle-out line on the main contact button */
+}
+
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
+.bg_video {
+    position: absolute;
+    width: 100%;
+    height: 98%;
+}
+
+.video_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.hero_content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+.hero_title_text {
+    font-size: 3rem;
+}
+
+.post_hero {
+    width: 100%;
+    /* height: 100vh; */
+    text-align: center;
+    padding: 5%;
+}
+
+.post_hero_title_text {
+    font-size: 2rem;
+}
+
+.post_hero_cards_cont {
+    width: 100%;
+
+}
+
+/* phc = post_hero_card */
+
+.phc_set1, .phc_set2, .phc_set3{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10vh 0vw;
+
+}
+
+.phc_set1 {
+    padding: 10vh 10vw;
+}
+
+.post_hero_card {
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    border: solid 3px green;
+    border-radius: 25px 10px;
+    overflow: hidden;
+    align-content: center;
+    position: relative;
+}
+
+.phc_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.phc_overlay {
+    position: absolute;
+    bottom: 0;
+    /* left: 0; */
+    height: 15%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 3;
+    padding: 5px;
+}
+
+.phc_text {
+    opacity: 1;
+}
+
+.phc_title {
+    font-weight: 600;
+    bottom: 20px;
+}
+
+/* ************* Index Page Enhancements ************* */
+
+.hero_subtitle_text {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 15px auto 25px;
+    text-align: center;
+    color: #f0f0f0;
+    line-height: 1.5;
+}
+
+.hero_cta_wrap {
+    display: flex;
+    gap: 15px;
+}
+
+.hero_btn {
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px 4px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero_btn_primary {
+    background-color: rgb(21, 143, 68);
+    color: white;
+}
+
+.hero_btn_secondary {
+    background-color: white;
+    color: rgb(21, 143, 68);
+}
+
+.hero_btn:hover {
+    transform: translateY(-2px);
+}
+
+.post_hero_subtitle_text {
+    color: #e2f1e7;
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+/* Fix team image rendering */
+.phc_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ************* Team Card Animations ************* */
+
+/* Smooth transitions for card structure */
+.post_hero_card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Image scaling on hover */
+.phc_img {
+    transition: transform 0.5s ease;
+}
+
+/* Overlay smooth slide & expand */
+.phc_overlay {
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.post_hero_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    border-color: rgb(13, 67, 35);
+}
+
+.post_hero_card:hover .phc_img {
+    transform: scale(1.08);
+}
+
+.post_hero_card:hover .phc_overlay {
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Subtle entrance animation on load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered entrance delay for cards */
+.phc_set1 .post_hero_card:nth-child(1) { animation-delay: 0.1s; }
+.phc_set1 .post_hero_card:nth-child(2) { animation-delay: 0.2s; }
+.phc_set2 .post_hero_card:nth-child(1) { animation-delay: 0.3s; }
+.phc_set2 .post_hero_card:nth-child(2) { animation-delay: 0.4s; }
+.phc_set2 .post_hero_card:nth-child(3) { animation-delay: 0.5s; }
+.phc_set3 .post_hero_card:nth-child(1) { animation-delay: 0.6s; }
+.phc_set3 .post_hero_card:nth-child(2) { animation-delay: 0.7s; }
+.phc_set3 .post_hero_card:nth-child(3) { animation-delay: 0.8s; }
+
+/* CTA Banner */
+.home_cta_banner {
+    background-color: white;
+    color: seagreen;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.home_cta_banner h2 {
+    font-size: 2.2rem;
+}
+
+.home_cta_banner p {
+    color: gray;
+    font-size: 1.1rem;
+}
+
+.cta_banner_btn {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+/* *************End of Index.html styles**************/
+
+/* ********** Start of about.html styles ********** */
+
+.about_body {
+    background-color: aliceblue;
+    color: seagreen;
+}
+
+.about_hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.about_us_title_text {
+    font-size: 3.2rem;
+    color: seagreen;
+    margin-bottom: 10px;
+}
+
+.about_us_subtitle_text {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #4a6b5d;
+}
+
+.about_main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5% 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.our_story_cont, .mission_vision_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+    padding: 40px;
+    border: solid 3px green;
+    border-radius: 25px 10px;
+}
+
+.our_story_text_cont, .mission_vision_text_cont {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.our_story_img_cont, .mission_vision_img_cont {
+    width: 40%;
+    height: 350px;
+    border-radius: 20px 10px;
+    overflow: hidden;
+    border: solid 2px green;
+}
+
+.about_section_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section_heading {
+    font-size: 2rem;
+    color: seagreen;
+    margin-bottom: 10px;
+}
+
+.about_paragraph {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.mv_block {
+    margin-bottom: 20px;
+}
+
+.mv_block:last-child {
+    margin-bottom: 0;
+}
+
+/* Statistics Bar */
+.about_stats_cont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: seagreen;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 25px 10px;
+    text-align: center;
+    gap: 20px;
+}
+
+.stat_card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat_number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat_label {
+    font-size: 1rem;
+    color: #d1e7dd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .our_story_cont, .mission_vision_cont {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .our_story_text_cont, .mission_vision_text_cont,
+    .our_story_img_cont, .mission_vision_img_cont {
+        width: 100%;
+    }
+
+    .mission_vision_cont {
+        flex-direction: column-reverse;
+    }
+
+    .about_stats_cont {
+        flex-direction: column;
+    }
+}
+
+/* ********** End of about.html styles ********** */
+
+
+
+/* ************* Start of blog.html styles ************* */
+
+.blog_body {
+    background-color: aliceblue;
+    color: #1b4332;
+}
+
+.blog_hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.blog_hero_title {
+    font-size: 3rem;
+    color: seagreen;
+    margin-bottom: 10px;
+}
+
+.blog_hero_subtitle {
+    font-size: 1.1rem;
+    color: gray;
+}
+
+/* Main Layout */
+.blog_container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 5% 60px;
+    display: flex;
+    gap: 40px;
+}
+
+.blog_posts_grid {
+    flex: 2.5;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Card Styling */
+.blog_card {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 25px 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog_card.featured {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+}
+
+.blog_card_img_wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog_card.featured .blog_card_img_wrapper {
+    width: 45%;
+    height: auto;
+}
+
+.blog_card_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog_badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgb(21, 143, 68);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 8px 4px;
+    text-transform: uppercase;
+}
+
+.blog_card_content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.blog_card.featured .blog_card_content {
+    width: 55%;
+    padding: 35px;
+}
+
+.blog_meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: gray;
+    margin-bottom: 12px;
+}
+
+.blog_card_title {
+    font-size: 1.35rem;
+    color: seagreen;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.blog_card.featured .blog_card_title {
+    font-size: 1.8rem;
+}
+
+.blog_card_excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.blog_read_more {
+    font-weight: bold;
+    color: rgb(21, 143, 68);
+    transition: color 0.2s ease;
+}
+
+.blog_read_more:hover {
+    color: rgb(13, 67, 35);
+}
+
+/* Sidebar Styling */
+.blog_sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar_widget {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 25px 10px;
+    padding: 25px;
+}
+
+.widget_title {
+    font-size: 1.2rem;
+    color: seagreen;
+    margin-bottom: 15px;
+    border-bottom: 2px solid aliceblue;
+    padding-bottom: 8px;
+}
+
+.blog_search_form {
+    display: flex;
+    gap: 8px;
+}
+
+.search_input {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.search_btn {
+    background-color: rgb(21, 143, 68);
+    color: white;
+    border: none;
+    border-radius: 8px 4px;
+    padding: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.widget_categories {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.widget_categories a {
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.widget_categories a:hover {
+    color: seagreen;
+    font-weight: bold;
+}
+
+.widget_text {
+    font-size: 0.9rem;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.blog_newsletter_form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .blog_container {
+        flex-direction: column;
+    }
+    
+    .blog_card.featured {
+        flex-direction: column;
+    }
+    
+    .blog_card.featured .blog_card_img_wrapper,
+    .blog_card.featured .blog_card_content {
+        width: 100%;
+    }
+}
+
+/* ************* End of blog.html styles ************* */
+
+/* *************Start of contact.html styles************* */
+
+.contact_body {
+    background-color: aliceblue;
+    color: seagreen;
+    min-height: 100vh;
+}
+
+.contact_wrapper {
+    padding: 50px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact_header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact_title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.contact_subtitle {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    gap: 30px;
+}
+
+/* Contact Info Section */
+.contact_info_card {
+    width: 40%;
+    background-color: seagreen;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact_info_card h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact_info_text {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.info_item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info_item strong {
+    font-size: 1.1rem;
+}
+
+/* Contact Form Section */
+.contact_form {
+    width: 58%;
+    background-color: white;
+    padding: 40px;
+    border: solid 3px green;
+    border-radius: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form_label {
+    font-weight: 600;
+    color: seagreen;
+}
+
+.form_input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid green;
+    border-radius: 8px 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+}
+
+.form_input:focus {
+    border-color: rgb(13, 67, 35);
+}
+
+.form_textarea {
+    resize: vertical;
+}
+
+.contact_submit_btn {
+    padding: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: rgb(21, 143, 68);
+    color: rgb(248, 248, 247);
+    border: 2px solid transparent;
+    border-radius: 8px 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact_submit_btn:hover {
+    background-color: rgb(13, 67, 35);
+}
+
+/* **********End of contact.html styles**************** */
+
+/* ************* Updated Modern Footer Styles ************* */
+
+.footer {
+    width: 100%;
+    background-color: #0b3d20;
+    color: #e2f1e7;
+    padding: 30px 8% 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer_brand {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer_logo {
+    height: 100px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    /* transform: scale(1.5); */
+}
+
+.footer_tagline {
+    font-size: 0.85rem;
+    color: #a3ccb5;
+}
+
+.footer_info {
+    display: flex;
+    gap: 40px;
+}
+
+.footer_contact_item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer_label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #81b29a;
+    font-weight: 700;
+}
+
+.footer_text, .footer_link {
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.footer_link {
+    transition: color 0.2s ease;
+}
+
+.footer_link:hover {
+    color: #81b29a;
+}
+
+.footer_social {
+    display: flex;
+    gap: 15px;
+}
+
+.social_icon_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social_icon_link:hover {
+    background-color: rgb(21, 143, 68);
+    transform: translateY(-2px);
+}
+
+.footer_bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.copyright_text {
+    font-size: 0.8rem;
+    color: #a3ccb5;
+    margin-top: 0;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .footer_container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer_info {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/* ************* Global Responsive Adjustments ************* */
+
+@media (max-width: 768px) {
+    /* Navbar Adjustment */
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav_pages_wrap {
+        width: 100%;
+    }
+
+    .nav_pages_cont {
+        margin-right: 0;
+        justify-content: space-around;
+    }
+
+    .nav_page {
+        width: auto;
+    }
+
+    .nav_btn_contact {
+        width: 100%;
+    }
+
+    /* Hero Text Adjustment */
+    .hero_title_text {
+        font-size: 2rem;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .hero_subtitle_text {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .hero_cta_wrap {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .hero_btn {
+        text-align: center;
+    }
+
+    /* Team Cards Stacking */
+    .phc_set1, .phc_set2, .phc_set3 {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px 0;
+    }
+
+    /* Contact Page Layout */
+    .contact_container {
+        flex-direction: column;
+    }
+
+    .contact_info_card, .contact_form {
+        width: 100%;
+    }
+}
