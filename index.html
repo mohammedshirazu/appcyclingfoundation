@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/logo.svg" sizes="32x32" class="website-icon">
-    <title>Appcycling Foundation</title>
+    <title>Appcycling Foundation | Building Zero Waste Africa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="index_body">
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav_logo_cont">
-            <img src="assets/images/app_found_logo2.svg" class="nav_logo_img" alt="appcycling foundation logo">
+            <img src="assets/images/appFoundT.png" class="nav_logo_img" alt="appcycling foundation logo">
         </div>
 
-        <div class="nav_pages_wrap">
+        <!-- Hamburger Menu Button -->
+        <button class="nav_toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+        </button>
+
+        <div class="nav_pages_wrap" id="navPagesWrap">
             <ul class="nav_pages_cont">
                 <li class="nav_page">
                     <a href="index.html" class="nav_page_link">
                         <button class="nav_btn">Home</button>
+                    </a>
+                </li>
+                <li class="nav_page">
+                    <a href="projects.html" class="nav_page_link">
+                        <button class="nav_btn">Projects</button>
                     </a>
                 </li>
                 <li class="nav_page">                    
@@ -31,7 +45,6 @@
                     </a>
                 </li>
                 <li class="nav_page">
-                    <div class="nav_page_link_area"></div>                    
                     <a href="contact.html" class="nav_page_link"> 
                         <button class="nav_btn_contact nav_btn">Contact us</button>
                     </a>
@@ -49,118 +62,131 @@
         <div class="video_overlay"></div>
 
         <div class="hero_content">
-            <h1 class="hero_title_text">Promoting Sustainability in Northern Ghana</h1>
-            <p class="hero_subtitle_text">Empowering local communities through innovative waste recycling and environmental education.</p>
+            <h1 class="hero_title_text">Building Zero Waste Africa</h1>
+            <p class="hero_subtitle_text">Reclaiming Materials. Restoring Livelihoods. Rebooting Communities.</p>
             <div class="hero_cta_wrap">
-                <a href="about.html" class="hero_btn hero_btn_primary">Learn More</a>
-                <a href="contact.html" class="hero_btn hero_btn_secondary">Get Involved</a>
+                <a href="about.html" class="hero_btn hero_btn_primary">Our Philosophy</a>
+                <a href="projects.html" class="hero_btn hero_btn_secondary">View Projects</a>
             </div>
         </div>
     </header>
 
-    <!-- Team Section -->
-    <main class="post_hero">
-        <div class="post_hero_title">
-            <h2 class="post_hero_title_text">Meet Our Team</h2>
-            <p class="post_hero_subtitle_text">The dedicated team leading our environmental and social impact initiatives.</p>
-        </div>
-
-        <div class="post_hero_content">
-            <div class="post_hero_cards_cont">
-            
-                <ul class="post_hero_cards_set1 phc_set1">
-                    <li class="post_hero_card">
-                        <img src="assets/images/agabas.jpg" class="phc_img" alt="Kwaku Agabas">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Kwaku Agabas</p>
-                            <p class="phc_subtitle phc_text">CEO</p>
-                        </div>
-                    </li>
-
-                    <li class="post_hero_card">
-                        <img src="assets/images/hadija.jpg" class="phc_img" alt="Hadija Alidu">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Hadija Alidu</p>
-                            <p class="phc_subtitle phc_text">Co-Founder</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <ul class="post_hero_cards_set2 phc_set2">
-                    <li class="post_hero_card">
-                        <img src="assets/images/agnes.jpg" class="phc_img" alt="Agnes A. Robert">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Agnes A. Robert</p>
-                            <p class="phc_subtitle phc_text">Coordinator</p>
-                        </div>
-                    </li>
-                    <li class="post_hero_card">
-                        <img src="assets/images/zakia.jpg" class="phc_img" alt="Zakiyatu Osman">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Zakiyatu Osman</p>
-                            <p class="phc_subtitle phc_text">Project Manager</p>
-                        </div>
-                    </li>
-                    <li class="post_hero_card">
-                        <img src="assets/images/mohammed.jpg" class="phc_img" alt="Mohammed Issah">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Mohammed Issah</p>
-                            <p class="phc_subtitle phc_text">Social Media Lead</p>
-                        </div>
-                    </li>
-                </ul>
-            
-                <ul class="post_hero_cards_set3 phc_set3">
-                    <li class="post_hero_card">
-                        <img src="assets/images/nafisa.jpg" class="phc_img" alt="Nafisa">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Nafisa</p>
-                            <p class="phc_subtitle phc_text">Finance Officer</p>
-                        </div>
-                    </li>
-                    <li class="post_hero_card">
-                        <img src="assets/images/dora.jpg" class="phc_img" alt="Dora Sambo">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Dora Sambo</p>
-                            <p class="phc_subtitle phc_text">Administrator</p>
-                        </div>
-                    </li>
-                    <li class="post_hero_card">
-                        <img src="assets/images/sualey.jpg" class="phc_img" alt="Francis">
-                        <div class="phc_overlay">
-                            <p class="phc_title phc_text">Francis</p>
-                            <p class="phc_subtitle phc_text">Project Manager</p>
-                        </div>
-                    </li>
-                </ul>
-            
+    <!-- Mission & Vision Section -->
+    <section class="mission_vision_section">
+        <div class="container">
+            <div class="mv_grid">
+                <div class="mv_card">
+                    <h2>Our Mission</h2>
+                    <p>To build inclusive, community-driven zero waste systems across Africa that protect human health, restore environmental quality, and create dignified livelihoods for those who bear the greatest burden of our throwaway economy.</p>
+                </div>
+                <div class="mv_card">
+                    <h2>Our Vision</h2>
+                    <p>An Africa where zero waste is not an aspiration but a practice — where no community is poisoned by consumption waste, informal workers are protected and fairly rewarded, and discarded materials source prosperity rather than pollution.</p>
+                </div>
+            </div>
+            <div class="tagline_banner">
+                <p><strong>Where Waste Becomes Wealth and Workers Thrive.</strong></p>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Impact & Strategic Goals (2025 - 2030) -->
+    <section class="impact_goals_section">
+        <div class="container">
+            <h2 class="section_title">Our Impact Commitments (2025 – 2030)</h2>
+            <p class="section_subtitle">Measuring progress against the global Zero Waste benchmark of 90%+ diversion from landfill and burning.</p>
+            
+            <div class="impact_metrics_grid">
+                <div class="metric_card">
+                    <h3 class="stat_number" data-target="10000" data-suffix="+ Tonnes">0</h3>
+                    <p>E-waste and plastic waste diverted from open dumping or burning.</p>
+                </div>
+                <div class="metric_card">
+                    <h3 class="stat_number" data-target="1000" data-suffix="+ Workers">0</h3>
+                    <p>Informal waste workers formalised with PPE, fair pay, and welfare support.</p>
+                </div>
+                <div class="metric_card">
+                    <h3 class="stat_number" data-target="50000" data-suffix="+ Reached">0</h3>
+                    <p>Community members engaged through zero waste education and practice.</p>
+                </div>
+                <div class="metric_card">
+                    <h3 class="stat_number" data-target="1" data-suffix="st Zero Waste City">0</h3>
+                    <p>Establishing Tamale on a certified Zero Waste roadmap — Ghana's first model.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Initiative Section -->
+    <section class="flagship_section">
+        <div class="container">
+            <div class="flagship_card">
+                <span class="flagship_badge">FLAGSHIP INITIATIVE</span>
+                <h2>Northern Ghana Plastic Waste Reboot Initiative (NGPWRI)</h2>
+                <p>Active plastic waste collection and processing into flakes and pellets for circular reuse. Empowering 100+ women and youth workers across Tamale, Kumbungu, and Yendi through real-time digital tracking and welfare support.</p>
+                <div class="flagship_partners">
+                    <span>Supported by TRANSFORM:</span>
+                    <p>Unilever | UK Government (FCDO) | EY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="values_section">
+        <div class="container">
+            <h2 class="section_title">Our Core Values</h2>
+            <div class="values_grid">
+                <div class="value_item">
+                    <h4>Zero Waste</h4>
+                    <p>Designing every programme toward resource conservation without burning or landfilling.</p>
+                </div>
+                <div class="value_item">
+                    <h4>Dignity</h4>
+                    <p>Treating every person who touches waste with full human dignity and fair rewards.</p>
+                </div>
+                <div class="value_item">
+                    <h4>Accountability</h4>
+                    <p>Putting community impact and environmental protection first in all actions.</p>
+                </div>
+                <div class="value_item">
+                    <h4>Inclusion</h4>
+                    <p>Centring women, youth, and marginalised communities at the heart of our systems.</p>
+                </div>
+                <div class="value_item">
+                    <h4>Transparency</h4>
+                    <p>Sharing our data, progress, and assessments openly with the public.</p>
+                </div>
+                <div class="value_item">
+                    <h4>Innovation</h4>
+                    <p>Deploying modern digital tools, tracking, and evidence-based solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Call To Action Section -->
     <section class="home_cta_banner">
-        <h2>Ready to make a difference?</h2>
-        <p>Partner with us or support our community collection drives today.</p>
-        <a href="contact.html" class="contact_submit_btn cta_banner_btn">Contact Us Today</a>
+        <h2>Join Us in Building Zero Waste Africa</h2>
+        <p>Partner with us, support our collection drives, or learn more about our initiative in Tamale.</p>
+        <a href="contact.html" class="contact_submit_btn cta_banner_btn">Get Involved Today</a>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer_container">
             <div class="footer_brand">
-                <img src="assets/images/appFound_nobg.png" alt="Appcycling Foundation Logo" class="footer_logo">
-                <!-- <p class="footer_tagline">Promoting Sustainability in Northern Ghana</p> -->
+                <img src="assets/images/appFoundT.png" alt="Appcycling Foundation Logo" class="footer_logo">
             </div>
 
             <div class="footer_info">
                 <div class="footer_contact_item">
                     <span class="footer_label">Contact</span>
-                    <a href="tel:+233550561846" class="footer_link">+233 55 056 1846</a>
+                    <a href="mailto:info@appcyclingfoundation.org" class="footer_link">info@appcyclingfoundation.org</a>
                 </div>
                 <div class="footer_contact_item">
                     <span class="footer_label">Location</span>
-                    <span class="footer_text">Tamale, Ghana</span>
+                    <span class="footer_text">Tamale, Northern Ghana</span>
                 </div>
             </div>
 
@@ -178,8 +204,11 @@
         </div>
 
         <div class="footer_bottom">
-            <p class="copyright_text">&copy; 2026 Appcycling Foundation. All rights reserved.</p>
+            <p class="copyright_text">&copy; 2026 AppCycling Foundation. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
