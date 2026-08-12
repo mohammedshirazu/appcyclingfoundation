@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/logo.svg" sizes="32x32" class="website-icon">
-    <title>About Us - Appcycling Foundation</title>
+    <title>About Us | AppCycling Foundation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="about_body">
+
     <nav class="navbar">
         <div class="nav_logo_cont">
-            <img src="assets/images/app_found_logo2.svg" class="nav_logo_img" alt="appcycling foundation logo">
+            <img src="assets/images/appFoundT.png" class="nav_logo_img" alt="appcycling foundation logo">
         </div>
 
-        <div class="nav_pages_wrap">
+        <!-- Hamburger Menu Button -->
+        <button class="nav_toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+        </button>
+
+        <div class="nav_pages_wrap" id="navPagesWrap">
             <ul class="nav_pages_cont">
                 <li class="nav_page">
                     <a href="index.html" class="nav_page_link">
                         <button class="nav_btn">Home</button>
+                    </a>
+                </li>
+                <li class="nav_page">
+                    <a href="projects.html" class="nav_page_link">
+                        <button class="nav_btn">Projects</button>
                     </a>
                 </li>
                 <li class="nav_page">                    
@@ -31,7 +44,6 @@
                     </a>
                 </li>
                 <li class="nav_page">
-                    <div class="nav_page_link_area"></div>                    
                     <a href="contact.html" class="nav_page_link"> 
                         <button class="nav_btn_contact nav_btn">Contact us</button>
                     </a>
@@ -40,84 +52,355 @@
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
+    <!-- About Hero Section -->
     <header class="about_hero">
-        <h1 class="about_us_title_text">About Appcycling Foundation</h1>
-        <p class="about_us_subtitle_text">Advocating for sustainable waste management across Northern Ghana</p>
+        <div class="container">
+            <h1 class="about_hero_title">Who We Are</h1>
+            <p class="about_hero_subtitle">Building Zero Waste Africa through mission-driven community action, social protection, and digital innovation.</p>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="about_main">
-        <!-- Our Story Section -->
-        <section class="our_story_cont">
-            <div class="our_story_text_cont">
-                <h2 class="section_heading">Our Story</h2>
-                <p class="about_paragraph">
-                    Appcycling Foundation was created to tackle pressing environmental challenges through innovation, grassroots outreach, and structured waste collection systems.
-                </p>
-                <p class="about_paragraph">
-                    From e-waste management to plastic recovery, we collaborate with local communities and youth to build sustainable practices that protect natural ecosystems and generate green jobs.
-                </p>
+    <!-- Overview & Stats Section -->
+    <section class="about_overview_section">
+        <div class="container">
+            <div class="about_text_block">
+                <p><strong>AppCycling Foundation</strong> is a Ghanaian non-governmental organisation (NGO) headquartered in Tamale, Northern Ghana. We are the impact and community arm of the AppCyclers social enterprise ecosystem, established to carry out the work that is driven by mission rather than margin.</p>
+                <p>We are a <strong>Zero Waste organisation</strong> — guided by the internationally recognised Zero Waste philosophy that all materials can and should be recovered, reused, or recycled, and that burning and landfilling represent a failure of system design, not an inevitable outcome. This philosophy runs through every programme we operate and every policy position we hold.</p>
+                <p>We work at the intersection of environmental sustainability, social protection, and digital innovation. Our programmes focus on the communities most affected by the growing global e-waste and plastic waste crisis — particularly informal waste workers, women, and young people in underserved regions of Ghana and across Africa.</p>
+                <p>The Foundation operates six core programme areas, anchored by our flagship — the <strong>Northern Ghana Plastic Waste Reboot Initiative (NGPWRI)</strong> — which is active and funded with support from <strong>TRANSFORM</strong>, a joint initiative of Unilever, the UK Government's FCDO, and EY.</p>
             </div>
-            <div class="our_story_img_cont">
-                <img src="assets/images/agabas.jpg" alt="Our story in action" class="about_section_img">
-            </div>
-        </section>
 
-        <!-- Mission & Vision Section -->
-        <section class="mission_vision_cont">
-            <div class="mission_vision_img_cont">
-                <img src="assets/images/hadija.jpg" alt="Mission and vision" class="about_section_img">
-            </div>
-            <div class="mission_vision_text_cont">
-                <div class="mv_block">
-                    <h2 class="section_heading">Our Mission</h2>
-                    <p class="about_paragraph">
-                        To empower local communities with accessible, technology-driven recycling solutions and comprehensive environmental education.
-                    </p>
+            <!-- Key Fact Cards -->
+            <div class="about_stats_grid">
+                <div class="stat_badge badge_dark_green">
+                    <span class="stat_badge_value">2019</span>
+                    <span class="stat_badge_label">Year Founded</span>
                 </div>
-                <div class="mv_block">
-                    <h2 class="section_heading">Our Vision</h2>
-                    <p class="about_paragraph">
-                        A clean, sustainable Northern Ghana where waste is viewed as a valuable resource for circular economic growth.
-                    </p>
+                <div class="stat_badge badge_green">
+                    <span class="stat_badge_value">Tamale</span>
+                    <span class="stat_badge_label">Headquarters</span>
+                </div>
+                <div class="stat_badge badge_teal">
+                    <span class="stat_badge_value">6</span>
+                    <span class="stat_badge_label">Programme Areas</span>
+                </div>
+                <div class="stat_badge badge_navy">
+                    <span class="stat_badge_value">Zero</span>
+                    <span class="stat_badge_label">Waste Philosophy</span>
+                </div>
+                <div class="stat_badge badge_amber">
+                    <span class="stat_badge_value">Ghana</span>
+                    <span class="stat_badge_label">Primary Country</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Impact Statistics Section -->
-        <section class="about_stats_cont">
-                <div class="stat_card">
-                    <span class="stat_number" data-target="50">0+</span>
-                    <span class="stat_label">Tons Recycled</span>
+    <!-- Zero Waste Philosophy Section -->
+    <section class="philosophy_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">The Zero Waste Philosophy</h2>
+            <p class="philosophy_intro">Zero Waste is the overarching philosophy and the North Star of everything AppCycling Foundation does. It is not a marketing term. It is a globally recognised framework with its own standards, certifying bodies, and international movement.</p>
+
+            <!-- Definition Quote Box -->
+            <div class="zw_definition_box">
+                <h3>Zero Waste International Alliance Definition</h3>
+                <blockquote>
+                    "The conservation of all resources by means of responsible production, consumption, reuse, and recovery of products, packaging, and materials without burning and with no discharges to land, water, or air that threaten the environment or human health."
+                </blockquote>
+            </div>
+
+            <p class="benchmark_note">The internationally accepted benchmark for Zero Waste is <strong>90% or above diversion</strong> of all waste away from landfill, incineration, and the open environment. AppCycling Foundation adopts this standard and commits to working toward it across all communities and cities we serve.</p>
+
+            <!-- 4 Pillars Grid -->
+            <h3 class="subsection_title">What Zero Waste Means for AppCycling Foundation</h3>
+            <div class="pillars_grid">
+                <div class="pillar_card card_navy">
+                    <h4>A Design Principle</h4>
+                    <p>We do not design programmes to manage waste better. We design them to eliminate the conditions that create waste in the first place — through education, policy, and circular systems.</p>
                 </div>
-                <div class="stat_card">
-                    <span class="stat_number" data-target="12">0+</span>
-                    <span class="stat_label">Communities Reached</span>
+                <div class="pillar_card card_dark_green">
+                    <h4>An Honest Commitment</h4>
+                    <p>Zero Waste is a direction, not yet a destination. We are transparent that no community has reached zero — but every decision we make moves us toward it.</p>
                 </div>
-                <div class="stat_card">
-                    <span class="stat_number" data-target="20">0+</span>
-                    <span class="stat_label">Green Workshops</span>
+                <div class="pillar_card card_teal">
+                    <h4>A Policy Position</h4>
+                    <p>We oppose incineration and open burning as waste management solutions. We advocate for producer responsibility, product redesign, and material recovery as the only sustainable alternatives.</p>
                 </div>
-        </section>
-    </main>
+                <div class="pillar_card card_green">
+                    <h4>A Community Practice</h4>
+                    <p>Zero Waste works when communities participate. Our education and behaviour change programmes build the household and market-level habits that make Zero Waste systems viable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zero Waste Hierarchy Section -->
+    <section class="hierarchy_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Zero Waste Hierarchy</h2>
+            <p class="hierarchy_intro">All Foundation programmes are designed according to the Zero Waste Hierarchy — a framework that prioritises actions from most to least preferred:</p>
+
+            <div class="hierarchy_list">
+                <div class="hierarchy_row row_refuse">
+                    <div class="hierarchy_num">1</div>
+                    <div class="hierarchy_title">1. Refuse</div>
+                    <div class="hierarchy_desc">Prevent waste from being created. Advocate for producer responsibility and product redesign.</div>
+                </div>
+                <div class="hierarchy_row row_reduce">
+                    <div class="hierarchy_num">2</div>
+                    <div class="hierarchy_title">2. Reduce</div>
+                    <div class="hierarchy_desc">Use less. Support community behaviour change programs that reduce consumption and waste generation.</div>
+                </div>
+                <div class="hierarchy_row row_reuse">
+                    <div class="hierarchy_num">3</div>
+                    <div class="hierarchy_title">3. Reuse</div>
+                    <div class="hierarchy_desc">Extend product life. Support repair cafes, buy-nothing networks, and device refurbishment.</div>
+                </div>
+                <div class="hierarchy_row row_recycle">
+                    <div class="hierarchy_num">4</div>
+                    <div class="hierarchy_title">4. Recycle</div>
+                    <div class="hierarchy_desc">Recover materials. E-waste collection, plastic processing, and metal recovery programmes.</div>
+                </div>
+                <div class="hierarchy_row row_compost">
+                    <div class="hierarchy_num">5</div>
+                    <div class="hierarchy_title">5. Compost</div>
+                    <div class="hierarchy_desc">Return organics to the soil. Future programme expansion into organic waste and food waste.</div>
+                </div>
+                <div class="hierarchy_row row_never_burn">
+                    <div class="hierarchy_num">X</div>
+                    <div class="hierarchy_title">NEVER Burn</div>
+                    <div class="hierarchy_desc">Incineration and open burning are explicitly opposed. They destroy resources and poison communities.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zero Waste Tamale Initiative Section -->
+    <section class="tamale_initiative_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Zero Waste Tamale Initiative</h2>
+            <div class="tamale_card">
+                <h3>Our Most Ambitious Goal</h3>
+                <p>AppCycling Foundation is committed to working with the Tamale Metropolitan Assembly and community stakeholders to establish Tamale as <strong>Ghana's first Zero Waste City</strong> — a model for urban waste transformation across Africa. We will support the development of a Zero Waste City Roadmap, pursue UN-Habitat Zero Waste Cities framework alignment, and document the Tamale model for replication across the continent.</p>
+            </div>
+            <p class="tamale_footer_text">A Zero Waste City certification for Tamale would be a landmark achievement — the first in Ghana, one of the first in West Africa — attracting national government attention, international donor investment, and positioning AppCycling Foundation as the continental leader in community-led Zero Waste systems.</p>
+        </div>
+    </section>
+
+<!-- Who We Serve Section -->
+    <section class="who_we_serve_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Who We Serve</h2>
+            <div class="serve_grid">
+                <div class="serve_card">
+                    <h3>Informal Waste Workers</h3>
+                    <p>Men, women, and young people who collect, sort, and process e-waste and plastic waste — providing PPE, fair pay, and legal recognition at the centre of zero waste systems.</p>
+                </div>
+                <div class="serve_card">
+                    <h3>Women & Girls</h3>
+                    <p>The majority of informal plastic waste collectors in Northern Ghana, focusing on their economic empowerment, workplace safety, and leadership.</p>
+                </div>
+                <div class="serve_card">
+                    <h3>Youth & Young Adults</h3>
+                    <p>Young people aged 18–35 in underserved communities seeking skills, tools, and livelihoods in the growing circular economy.</p>
+                </div>
+                <div class="serve_card">
+                    <h3>Households & Local Communities</h3>
+                    <p>Families whose health and environment are directly impacted by open waste burning, driving zero waste habits at the household level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="team_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Meet Our Team</h2>
+            <p class="section_desc">The dedicated team driving sustainable change and zero waste innovation across Northern Ghana.</p>
+
+            <div class="team_grid">
+                <!-- Card 1 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/agabas.jpg" alt="Kwaku Agabas" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Kwaku Agabas</h3>
+                            <p class="team_role">CEO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/hadija.jpg" alt="Hadija Alidu" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Hadija Alidu</h3>
+                            <p class="team_role">Co-Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/agnes.jpg" alt="Agnes A. Robert" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Agnes A. Robert</h3>
+                            <p class="team_role">Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/zakia.jpg" alt="Zakiyatu Osman" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Zakiyatu Osman</h3>
+                            <p class="team_role">Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/mohammed.jpg" alt="Mohammed Issah" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Mohammed Issah</h3>
+                            <p class="team_role">Social Media Lead</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/nafisa.jpg" alt="Nafisa" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Nafisa Issahaku</h3>
+                            <p class="team_role">Finance Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/dora.jpg" alt="Dora Sambo" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Dora Sambo</h3>
+                            <p class="team_role">Administrator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="team_card">
+                    <div class="team_img_wrapper">
+                        <img src="assets/images/francis.jpg" alt="Francis" class="team_img">
+                        <div class="team_overlay">
+                            <h3 class="team_name">Francis Wumbidin</h3>
+                            <p class="team_role">Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relationship with AppCyclers Section -->
+    <section class="appcyclers_rel_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Relationship with AppCyclers</h2>
+            <div class="rel_card">
+                <h3>Legally Separate. Strategically Aligned.</h3>
+                <p>AppCycling Foundation and AppCyclers are distinct legal entities with separate bank accounts, governance boards, and financial reporting. Their relationship is governed by a written Related Party Transaction Policy.</p>
+                <p>The Foundation refers trained, registered waste workers to the AppCyclers marketplace, while AppCyclers shares technology infrastructure and operational data under a documented cost-sharing agreement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance & Leadership Section -->
+    <section class="governance_section">
+        <div class="container">
+            <h2 class="section_title left_aligned_title">Governance & Leadership</h2>
+
+            <h3 class="subsection_title">Board of Trustees</h3>
+            <p class="section_desc">Providing strategic oversight, fiduciary accountability, and mission continuity:</p>
+            <div class="governance_table_wrapper">
+                <table class="governance_table">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Background & Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Board Chair</strong></td>
+                            <td>Founder and CEO of AppCyclers — holding strategic vision and mission continuity.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Independent Treasurer</strong></td>
+                            <td>Finance or accounting professional providing independent oversight of accounts, audit, and donor compliance.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Independent Trustee</strong></td>
+                            <td>Legal and NGO governance background ensuring compliance with Ghanaian law and international requirements.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Community Representative</strong></td>
+                            <td>Elected from waste worker communities to ground governance in lived experience and worker voice.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zero Waste Trustee</strong></td>
+                            <td>Environmental science or Zero Waste practitioner providing technical credibility to programme design.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection_title">Executive Structure</h3>
+            <p class="section_desc">Day-to-day operations are led by operational management and programme leads:</p>
+            <div class="exec_grid">
+                <div class="exec_card">
+                    <h4>Executive Director</h4>
+                    <p>Overall operations, donor relations, government engagement, and zero waste strategy leadership.</p>
+                </div>
+                <div class="exec_card">
+                    <h4>Programme Managers</h4>
+                    <p>Dedicated leads across Waste & Environment, Zero Waste Communities, Policy & Research, and Youth & Women skills.</p>
+                </div>
+                <div class="exec_card">
+                    <h4>Finance & Compliance</h4>
+                    <p>Managing accounts, donor reporting, audit coordination, and related-party transaction oversight.</p>
+                </div>
+                <div class="exec_card">
+                    <h4>M&E Officer</h4>
+                    <p>Data collection, impact reporting, and measuring progress against zero waste diversion metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer_container">
             <div class="footer_brand">
-                <img src="assets/images/appFound_nobg.png" alt="Appcycling Foundation Logo" class="footer_logo">
-                <!-- <p class="footer_tagline">Promoting Sustainability in Northern Ghana</p> -->
+                <img src="assets/images/appFoundT.png" alt="Appcycling Foundation Logo" class="footer_logo">
             </div>
 
             <div class="footer_info">
                 <div class="footer_contact_item">
                     <span class="footer_label">Contact</span>
-                    <a href="tel:+233550561846" class="footer_link">+233 55 056 1846</a>
+                    <a href="mailto:info@appcyclingfoundation.org" class="footer_link">info@appcyclingfoundation.org</a>
                 </div>
                 <div class="footer_contact_item">
                     <span class="footer_label">Location</span>
-                    <span class="footer_text">Tamale, Ghana</span>
+                    <span class="footer_text">Tamale, Northern Ghana</span>
                 </div>
             </div>
 
@@ -135,10 +418,10 @@
         </div>
 
         <div class="footer_bottom">
-            <p class="copyright_text">&copy; 2026 Appcycling Foundation. All rights reserved.</p>
+            <p class="copyright_text">&copy; 2026 AppCycling Foundation. All rights reserved.</p>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 
 </body>
