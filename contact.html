@@ -10,14 +10,26 @@
 <body class="contact_body">
     <nav class="navbar">
         <div class="nav_logo_cont">
-            <img src="assets/images/app_found_logo2.svg" class="nav_logo_img" alt="appcycling foundation logo">
+            <img src="assets/images/appFoundT.png" class="nav_logo_img" alt="appcycling foundation logo">
         </div>
 
-        <div class="nav_pages_wrap">
+        <!-- Hamburger Menu Button -->
+        <button class="nav_toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+        </button>
+
+        <div class="nav_pages_wrap" id="navPagesWrap">
             <ul class="nav_pages_cont">
                 <li class="nav_page">
                     <a href="index.html" class="nav_page_link">
                         <button class="nav_btn">Home</button>
+                    </a>
+                </li>
+                <li class="nav_page">
+                    <a href="projects.html" class="nav_page_link">
+                        <button class="nav_btn">Projects</button>
                     </a>
                 </li>
                 <li class="nav_page">                    
@@ -31,7 +43,6 @@
                     </a>
                 </li>
                 <li class="nav_page">
-                    <div class="nav_page_link_area"></div>                    
                     <a href="contact.html" class="nav_page_link"> 
                         <button class="nav_btn_contact nav_btn">Contact us</button>
                     </a>
@@ -98,18 +109,17 @@
      <footer class="footer">
         <div class="footer_container">
             <div class="footer_brand">
-                <img src="assets/images/appFound_nobg.png" alt="Appcycling Foundation Logo" class="footer_logo">
-                <!-- <p class="footer_tagline">Promoting Sustainability in Northern Ghana</p> -->
+                <img src="assets/images/appFoundT.png" alt="Appcycling Foundation Logo" class="footer_logo">
             </div>
 
             <div class="footer_info">
                 <div class="footer_contact_item">
                     <span class="footer_label">Contact</span>
-                    <a href="tel:+233550561846" class="footer_link">+233 55 056 1846</a>
+                    <a href="mailto:info@appcyclingfoundation.org" class="footer_link">info@appcyclingfoundation.org</a>
                 </div>
                 <div class="footer_contact_item">
                     <span class="footer_label">Location</span>
-                    <span class="footer_text">Tamale, Ghana</span>
+                    <span class="footer_text">Tamale, Northern Ghana</span>
                 </div>
             </div>
 
@@ -127,7 +137,7 @@
         </div>
 
         <div class="footer_bottom">
-            <p class="copyright_text">&copy; 2026 Appcycling Foundation. All rights reserved.</p>
+            <p class="copyright_text">&copy; 2026 AppCycling Foundation. All rights reserved.</p>
         </div>
     </footer>
 </body>
