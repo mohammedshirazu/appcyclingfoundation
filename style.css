@@ -19,16 +19,19 @@ a {
 }
 
 
+/* ==========================================
+   Navigation Bar
+   ========================================== */
+
 .navbar {
     width: 100%;
-    height: 12vh;
+    min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    padding: 10px 50px;
+    position: relative; /* Unstuck from top during scroll */
+    background-color: #ffffff;
+    padding: 15px 50px;
     border-radius: 0 0 10px 10px;
     font-size: 1.2rem;
     z-index: 100;
@@ -36,70 +39,49 @@ a {
 
 .nav_logo_cont {
     display: flex;
-    justify-content: center;
-    /* border: solid 2px red; */
     align-items: center;
-    /* width: 30vw; */
     height: 100%;
 }
 
 .nav_logo_img {
     height: 60px;
+    width: auto;
 }
 
-/* wrap = container of cont*/
 .nav_pages_wrap {
-    width: 50%;
-    height: 100%;
-}
-
-.nav_pages_cont {
-    /* width: 50%; */
-    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border: none;
 }
 
-/* nav page = home, about, contact... sections */
-
 .nav_pages_cont {
-    margin-right: 4vw;
-    /* border: solid 3px red; */
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav_page {
-    height: 100%;
-    width: 15%;
     display: flex;
     align-items: center;
 }
 
-.nav_page_link {
-    width: 100%;
-    height: 80%;
-}
-
-
-/* ************* Navbar Button Animation ************* */
-
+/* Link / Button Base Styling */
 .nav_btn {
-    position: relative; /* Container for absolute pseudoelement */
-    height: 100%;
-    width: 100%;
-    padding: 5px;
+    position: relative;
+    padding: 8px 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
     font-size: 1rem;
     color: rgb(21, 143, 68);
-    border: none; /* Removed fixed border to allow bottom line drawing */
-    outline: none;
     background-color: transparent;
-    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
-/* Bottom border pseudo-element setup */
+/* Bottom Hover Line Effect */
 .nav_btn::after {
     content: '';
     position: absolute;
@@ -111,18 +93,17 @@ a {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Expand bottom border from middle outwards on hover */
 .nav_btn:not(.nav_btn_contact):hover::after {
     width: 100%;
     left: 0;
 }
 
-/* Keep solid styling for the primary CTA button */
+/* contact us btn */
 .nav_btn_contact {
-    width: 140%;
     background-color: rgba(21, 143, 68, 1);
     color: rgb(248, 248, 247);
     border-radius: 8px 4px;
+    padding: 10px 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -131,14 +112,10 @@ a {
 }
 
 .nav_btn_contact::after {
-    display: none; /* Disable middle-out line on the main contact button */
+    display: none;
 }
 
-/* ==========================================
-   Responsive Mobile Navigation & Toggle Menu
-   ========================================== */
-
-/* Toggle Button Styling (Hidden on Desktop) */
+/* Mobile Toggle Hamburger Button */
 .nav_toggle {
     display: none;
     background: transparent;
@@ -160,61 +137,69 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
-/* Mobile Screen Breakpoint */
+/* === Mobile Navigation === */
+
 @media (max-width: 768px) {
     .navbar {
-        position: relative;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
+        gap: 15px;
         padding: 15px 20px;
+        border-radius: 0;
     }
 
-    /* Show hamburger icon on small screens */
+    .nav_logo_cont {
+        justify-content: center;
+    }
+
     .nav_toggle {
         display: flex;
     }
-
-    /* Hide standard nav wrapper and transform to mobile dropdown */
+    
     .nav_pages_wrap {
         position: absolute;
-        top: 100%;
+        top: 100%; /* Opens menu directly below the hamburger/navbar bottom */
         left: 0;
         width: 100%;
-        background-color: #ffffff;
+        border-radius: 0 0 10px 10px;
+        background-color: white;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         max-height: 0;
         overflow: hidden;
+        opacity: 0.96;
         transition: max-height 0.35s ease-in-out, padding 0.35s ease-in-out;
-        z-index: 1000;
+        z-index: 100;
     }
 
-    /* Activated state when menu is opened */
+    /* Active Dropdown State */
     .nav_pages_wrap.active {
-        max-height: 350px;
-        padding: 15px 0;
+        max-height: 400px;
+        padding: 20px 0;
         border-bottom: 3px solid #175e34;
     }
 
     .nav_pages_cont {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        width: 100%;
+        gap: 15px;
     }
 
     .nav_page {
         width: 100%;
-        text-align: center;
+        justify-content: center;
     }
 
     .nav_btn {
         width: 80%;
-        padding: 10px 0;
+        text-align: center;
     }
 
-    /* Animated 'X' icon state when menu is open */
+    .nav_btn_contact {
+        width: 80%;
+    }
+
+    /* Morphing 'X' animation */
     .nav_toggle.active .hamburger_bar:nth-child(1) {
         transform: translateY(8.5px) rotate(45deg);
     }
@@ -230,9 +215,9 @@ a {
 
 /* *************************Navigation Bar Ends************************* */
 
-/* ==========================================================================
-                   Home Page Styles
-   ========================================================================== */
+/* =======================================
+    Home Page
+   ======================================== */
 
 /* Hero Section */
 .hero {
@@ -326,7 +311,8 @@ a {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Layout Container & Common Headings */
+
+/* Layout Container & Common Headings after hero section */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -480,8 +466,12 @@ a {
 }
 
 /* Core Values Section */
+.values_title_text {
+    margin-bottom: 25px;
+}
+
 .values_section {
-    padding: 70px 0;
+    padding: 60px 0;
 }
 
 .values_grid {
@@ -516,7 +506,7 @@ a {
     line-height: 1.5;
 }
 
-/* Call to Action Banner */
+/* Call to Action */
 .home_cta_banner {
     background-color: #ffffff;
     color: #158f44;
@@ -547,8 +537,29 @@ a {
     margin-top: 10px;
 }
 
-/* Responsive Styles */
+/*===screen responsiveness=== */
 @media (max-width: 850px) {
+
+     .hero_title_text {
+        font-size: 2rem;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .hero_subtitle_text {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .hero_cta_wrap {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .hero_btn {
+        text-align: center;
+    }
+    
     .mv_grid, 
     .values_grid {
         grid-template-columns: 1fr;
@@ -576,9 +587,11 @@ a {
 }
 
 
-/* *************End of Index.html styles**************/
+/* ******************** Home page end ***********************/
 
-/* ********** Start of about.html styles ********** */
+/* ==========================================
+About Page
+============================================= */
 
 .about_body {
     background-color: #ffffff;
@@ -606,15 +619,6 @@ a {
     line-height: 1.5;
 }
 
-/* Common Section Helpers */
-.left_aligned_title {
-    text-align: left;
-    color: #0d4323;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 8px;
-}
 
 /* Overview Section & Badges */
 .about_overview_section {
@@ -862,108 +866,8 @@ a {
     line-height: 1.5;
 }
 
-/* Relationship with AppCyclers Section */
-.appcyclers_rel_section {
-    padding: 50px 0;
-    background-color: #f9fbf9;
-}
 
-.rel_card {
-    background-color: #ffffff;
-    border: 1px solid #c8e6c9;
-    border-left: 5px solid #175e34;
-    padding: 30px;
-    border-radius: 4px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-}
-
-.rel_card h3 {
-    color: #175e34;
-    font-size: 1.35rem;
-    margin-bottom: 12px;
-}
-
-.rel_card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444444;
-    margin-bottom: 12px;
-}
-
-.rel_card p:last-child {
-    margin-bottom: 0;
-}
-
-/* Governance Section */
-.governance_section {
-    padding: 50px 0 70px;
-}
-
-.section_desc {
-    font-size: 0.98rem;
-    color: #555555;
-    margin-bottom: 18px;
-}
-
-.governance_table_wrapper {
-    overflow-x: auto;
-    margin-bottom: 35px;
-}
-
-.governance_table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    text-align: left;
-}
-
-.governance_table th,
-.governance_table td {
-    padding: 14px 18px;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 0.95rem;
-}
-
-.governance_table th {
-    background-color: #1f3a60;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.governance_table tr:nth-child(even) {
-    background-color: #fcfcfc;
-}
-
-.exec_grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.exec_card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 3px solid #1f3a60;
-    padding: 20px;
-    border-radius: 4px;
-}
-
-.exec_card h4 {
-    color: #1f3a60;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.exec_card p {
-    font-size: 0.92rem;
-    color: #555555;
-    line-height: 1.5;
-}
-
-/* ==========================================
-   Meet Our Team Section & Animations
-   ========================================== */
+/* Meet Our Team */
 .team_section {
     padding: 60px 0;
     background-color: #ffffff;
@@ -1028,7 +932,7 @@ a {
     letter-spacing: 0.5px;
 }
 
-/* Hover Animations */
+/*** Hover Animations ***/
 
 /* Card lifts slightly */
 .team_card:hover {
@@ -1047,7 +951,7 @@ a {
     opacity: 1;
 }
 
-/* Responsive adjustments for Meet Team section*/
+/* Responsiveness for Meet Team section*/
 @media (max-width: 1024px) {
     .team_grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1071,7 +975,7 @@ a {
     }
 }
 
-/* Responsive Styles for About Page */
+/* === General responsiveness for About Page sections === */
 @media (max-width: 850px) {
     .about_stats_grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1106,9 +1010,11 @@ a {
     }
 }
 
-/* ********** End of about.html styles ********** */
+/* ******************** About Page End ********************** */
 
-/* ************* Start of blog.html styles ************* */
+/* ======================================
+Blog Page 
+========================================= */
 
 .blog_body {
     background-color: aliceblue;
@@ -1249,7 +1155,7 @@ a {
     color: rgb(13, 67, 35);
 }
 
-/* Sidebar Styling */
+/* Sidebar */
 .blog_sidebar {
     flex: 1;
     display: flex;
@@ -1324,7 +1230,7 @@ a {
     gap: 12px;
 }
 
-/* Responsive Styles */
+/* Responsiveness */
 @media (max-width: 992px) {
     .blog_container {
         flex-direction: column;
@@ -1340,9 +1246,11 @@ a {
     }
 }
 
-/* ************* End of blog.html styles ************* */
+/* *************** Blog Page End ****************** */
 
-/* *************Start of contact.html styles************* */
+/* ========================================
+Contact Page
+============================================*/
 
 .contact_body {
     background-color: aliceblue;
@@ -1415,7 +1323,7 @@ a {
     font-size: 1.1rem;
 }
 
-/* Contact Form Section */
+/* Contact Form */
 .contact_form {
     width: 58%;
     background-color: white;
@@ -1475,9 +1383,157 @@ a {
     background-color: rgb(13, 67, 35);
 }
 
-/* **********End of contact.html styles**************** */
+/* donate */
 
-/* ************* Start of projects.html styles ************* */
+.donate_section {
+    padding: 50px 20px;
+    background-color: #f4f8f5;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1000px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.donate_header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.donate_header h2 {
+    color: rgb(13, 67, 35);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.donate_header p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.donate_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.donate_card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.donate_card.highlight_card {
+    border: 2px solid rgb(21, 143, 68);
+}
+
+.donate_card h3 {
+    color: rgb(21, 143, 68);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.donate_card p {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.donate_info_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.donate_info_list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.donate_info_list li:last-child {
+    border-bottom: none;
+}
+
+/* Preset Amount Selector */
+.donate_amounts {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.amount_btn {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid rgb(21, 143, 68);
+    background: transparent;
+    color: rgb(21, 143, 68);
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.amount_btn.active,
+.amount_btn:hover {
+    background-color: rgb(21, 143, 68);
+    color: #ffffff;
+}
+
+/* Donate Button */
+.donate_cta_btn {
+    display: block;
+    text-align: center;
+    background-color: rgb(21, 143, 68);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.donate_cta_btn:hover {
+    background-color: rgb(13, 67, 35);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .donate_section {
+        padding: 35px 15px;
+    }
+    
+    .donate_header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* General contact page responsiveness */
+@media (max-width: 768px) {
+      
+    /* Contact Page Layout */
+    .contact_container {
+        flex-direction: column;
+    }
+
+    .contact_info_card, .contact_form {
+        width: 100%;
+    }
+}
+
+
+
+/* ***************End of contact.html styles******************* */
+
+/* ==================================
+Projects Page
+====================================== */
 
 .projects_body {
     background-color: aliceblue;
@@ -1563,7 +1619,7 @@ a {
     line-height: 1.4;
 }
 
-/* Zero Waste Hierarchy Banner */
+/* Zero Waste Hierarchy */
 .hierarchy_banner {
     background-color: #e8f5e9;
     border-left: 5px solid #2e7d32;
@@ -1584,7 +1640,7 @@ a {
     line-height: 1.5;
 }
 
-/* Core Programmes Section */
+/* Core Programmes */
 .core_programmes_section {
     margin-bottom: 60px;
 }
@@ -1688,13 +1744,13 @@ a {
     color: #222222;
 }
 
-/* Community Projects Section Margin Adjustments */
+/* Community Projects */
 .community_projects_section {
     padding-top: 20px;
     border-top: 1px solid #e0e0e0;
 }
 
-/* Responsive Grid Adjustments */
+/* Responsiveness */
 @media (max-width: 1100px) {
     .projects_grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1707,11 +1763,13 @@ a {
     }
 }
 
-/* ************* End of projects.html styles ************* */
+/* ******************** End of projects.html styles ******************** */
 
 
 
-/* ************* Updated Modern Footer Styles ************* */
+/* =============================
+Footer
+===================================== */
 
 .footer {
     width: 100%;
@@ -1817,7 +1875,8 @@ a {
     margin-top: 0;
 }
 
-/* Responsive adjustment for small screens */
+/*** Footer Responsiveness***/
+
 @media (max-width: 768px) {
     .footer_container {
         flex-direction: column;
@@ -1831,74 +1890,5 @@ a {
 
     .footer_logo {
         display: none;
-    }
-}
-
-
-/* ************* Global Responsive Adjustments ************* */
-
-@media (max-width: 768px) {
-    /* Navbar Adjustment */
-    .navbar {
-        height: auto;
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav_pages_wrap {
-        width: 100%;
-    }
-
-    .nav_pages_cont {
-        margin-right: 0;
-        justify-content: space-around;
-    }
-
-    .nav_page {
-        width: auto;
-    }
-
-    .nav_btn_contact {
-        width: 100%;
-    }
-
-
-
-    /* */
-    .hero_title_text {
-        font-size: 2rem;
-        padding: 0 15px;
-        text-align: center;
-    }
-
-    .hero_subtitle_text {
-        font-size: 1rem;
-        padding: 0 20px;
-    }
-
-    .hero_cta_wrap {
-        flex-direction: column;
-        width: 80%;
-    }
-
-    .hero_btn {
-        text-align: center;
-    }
-
-    /* Team Cards Stacking */
-    .phc_set1, .phc_set2, .phc_set3 {
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px 0;
-    }
-
-    /* Contact Page Layout */
-    .contact_container {
-        flex-direction: column;
-    }
-
-    .contact_info_card, .contact_form {
-        width: 100%;
     }
 }
