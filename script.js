@@ -68,4 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize count-up sections
     initCountUp(".about_stats_cont", ".stat_number");
     initCountUp(".impact_goals_section", ".metric_card h3");
+
+    // donate amount click
+    const amountBtns = document.querySelectorAll('.amount_btn');
+
+    amountBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            amountBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
 });
