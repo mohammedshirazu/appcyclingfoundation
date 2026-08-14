@@ -10,10 +10,12 @@
 <body class="contact_body">
     <nav class="navbar">
         <div class="nav_logo_cont">
-            <img src="assets/images/appFoundT.png" class="nav_logo_img" alt="appcycling foundation logo">
+            <a href="index.html">
+                <img src="assets/images/appFoundT.png" class="nav_logo_img" alt="Appcycling Foundation Logo">
+            </a>
         </div>
 
-        <!-- Hamburger Menu Button -->
+        <!-- Mobile Hamburger Toggle -->
         <button class="nav_toggle" id="navToggle" aria-label="Toggle navigation">
             <span class="hamburger_bar"></span>
             <span class="hamburger_bar"></span>
@@ -23,29 +25,19 @@
         <div class="nav_pages_wrap" id="navPagesWrap">
             <ul class="nav_pages_cont">
                 <li class="nav_page">
-                    <a href="index.html" class="nav_page_link">
-                        <button class="nav_btn">Home</button>
-                    </a>
+                    <a href="index.html" class="nav_btn">Home</a>
                 </li>
                 <li class="nav_page">
-                    <a href="projects.html" class="nav_page_link">
-                        <button class="nav_btn">Projects</button>
-                    </a>
+                    <a href="projects.html" class="nav_btn">Projects</a>
                 </li>
                 <li class="nav_page">                    
-                    <a href="about.html" class="nav_page_link">
-                        <button class="nav_btn">About</button>
-                    </a>                    
+                    <a href="about.html" class="nav_btn">About</a>                    
                 </li>
                 <li class="nav_page">
-                    <a href="blog.html" class="nav_page_link">
-                        <button class="nav_btn">Blog</button>
-                    </a>
+                    <a href="blog.html" class="nav_btn">Blog</a>
                 </li>
                 <li class="nav_page">
-                    <a href="contact.html" class="nav_page_link"> 
-                        <button class="nav_btn_contact nav_btn">Contact us</button>
-                    </a>
+                    <a href="contact.html" class="nav_btn nav_btn_contact">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -65,7 +57,7 @@
                 
                 <div class="info_item">
                     <strong>Phone:</strong>
-                    <span>+233 55 056 1846</span>
+                    <span>+233 54 932 0589</span>
                 </div>
                 
                 <div class="info_item">
@@ -106,6 +98,43 @@
         </div>
     </main>
 
+    <!-- Donate Section -->
+    <section class="donate_section">
+        <div class="donate_container">
+            <div class="donate_header">
+                <h2>Support Our Cause</h2>
+                <p>Your contributions directly empower our environmental and recycling programs.</p>
+            </div>
+
+            <div class="donate_grid">
+                <!-- Option 1: Mobile Money / Direct Bank Details -->
+                <div class="donate_card">
+                    <h3>Mobile Money & Bank Transfer</h3>
+                    <ul class="donate_info_list">
+                        <li><strong>Network:</strong> MTN Mobile Money</li>
+                        <li><strong>Number:</strong> 054 932 0589</li>
+                        <li><strong>Account Name:</strong> Appcycling Foundation</li>
+                        <li><strong>Reference:</strong> Donation</li>
+                    </ul>
+                </div>
+
+                <!-- Option 2: Online Payment Button -->
+                <div class="donate_card highlight_card">
+                    <h3>Donate Online</h3>
+                    <p>Make a quick, secure online payment with your card or mobile wallet.</p>
+                    
+                    <div class="donate_amounts">
+                        <button type="button" class="amount_btn active">50</button>
+                        <button type="button" class="amount_btn">100</button>
+                        <button type="button" class="amount_btn">200</button>
+                    </div>
+
+                    <a href="https://paystack.com" target="_blank" class="donate_cta_btn">Proceed to Donate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
      <footer class="footer">
         <div class="footer_container">
             <div class="footer_brand">
@@ -140,5 +169,9 @@
             <p class="copyright_text">&copy; 2026 AppCycling Foundation. All rights reserved.</p>
         </div>
     </footer>
+
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
